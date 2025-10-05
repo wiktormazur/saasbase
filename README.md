@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SaaS Base
 
-## Getting Started
+Nowoczesna aplikacja SaaS zbudowana z Next.js i Supabase.
 
-First, run the development server:
+## Funkcje
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ✅ **Next.js 15** - Najnowsza wersja z App Router
+- ✅ **TypeScript** - Pełne wsparcie dla TypeScript
+- ✅ **Tailwind CSS** - Nowoczesne style
+- ✅ **Supabase** - Backend as a Service
+- ✅ **Autentykacja** - Magic link authentication
+- ✅ **Middleware** - Ochrona tras
+- ✅ **Dashboard** - Panel użytkownika
+
+## Szybki start
+
+1. **Sklonuj repozytorium**
+   ```bash
+   git clone https://github.com/wiktormazur/saasbase.git
+   cd saasbase
+   ```
+
+2. **Zainstaluj zależności**
+   ```bash
+   npm install
+   ```
+
+3. **Skonfiguruj Supabase**
+   - Skopiuj `env.example` do `.env.local`
+   - Dodaj swoje klucze Supabase:
+     ```env
+     NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+     NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+     ```
+
+4. **Uruchom aplikację**
+   ```bash
+   npm run dev
+   ```
+
+5. **Otwórz w przeglądarce**
+   ```
+   http://localhost:3000
+   ```
+
+## Struktura projektu
+
+```
+src/
+├── app/
+│   ├── auth/
+│   │   ├── callback/
+│   │   └── auth-code-error/
+│   ├── dashboard/
+│   ├── login/
+│   └── page.tsx
+├── lib/
+│   └── supabase/
+│       ├── client.ts
+│       ├── middleware.ts
+│       └── server.ts
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Konfiguracja Supabase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Utwórz nowy projekt w [Supabase](https://supabase.com)
+2. Skopiuj URL projektu i klucz anon
+3. Włącz Email Authentication w Authentication > Settings
+4. Dodaj `http://localhost:3000/auth/callback` do Redirect URLs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Dostępne skrypty
 
-## Learn More
+- `npm run dev` - Uruchom w trybie deweloperskim
+- `npm run build` - Zbuduj aplikację
+- `npm run start` - Uruchom produkcyjnie
+- `npm run lint` - Sprawdź kod ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Następne kroki
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] Dodać płatności (Stripe)
+- [ ] Zaimplementować system subskrypcji
+- [ ] Dodać metryki i analitykę
+- [ ] Stworzyć API endpoints
+- [ ] Dodać testy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Licencja
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

@@ -35,10 +35,16 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Only redirect to login for main domain, not for tenant subdomains
+  const hostname = request.headers.get('host') || ''
+  const isMainDomain = !hostname.includes('.') || hostname.includes('localhost')
+  
   if (
     !user &&
+    isMainDomain &&
     !request.nextUrl.pathname.startsWith('/login') &&
-    !request.nextUrl.pathname.startsWith('/auth')
+    !request.nextUrl.pathname.startsWith('/auth') &&
+    !request.nextUrl.pathname.startsWith('/admin')
   ) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()

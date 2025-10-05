@@ -16,19 +16,26 @@ export default function Home() {
           SaaS Base
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 text-center sm:text-left">
-          Nowoczesna aplikacja SaaS z Next.js i Supabase
+          Multi-tenant platforma SaaS z Next.js, Supabase i Redis
         </p>
         
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
-            Projekt zawiera integrację z{" "}
+            Multi-tenant architektura z{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              Supabase
+              subdomenami
+            </code>
+            .
+          </li>
+          <li className="mb-2 tracking-[-.01em]">
+            Integracja z{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+              Supabase & Redis
             </code>
             .
           </li>
           <li className="tracking-[-.01em]">
-            Gotowy do budowania aplikacji SaaS.
+            Panel administracyjny do zarządzania tenantami.
           </li>
         </ol>
 
@@ -38,6 +45,12 @@ export default function Home() {
             href="/dashboard"
           >
             Dashboard
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href="/admin"
+          >
+            Panel Admin
           </a>
           <a
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"

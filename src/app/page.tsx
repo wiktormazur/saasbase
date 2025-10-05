@@ -16,7 +16,7 @@ export default function Home() {
           SaaS Base
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 text-center sm:text-left">
-          Multi-tenant platforma SaaS z Next.js, Supabase i Redis
+          Multi-tenant platforma SaaS z Next.js i Supabase
         </p>
         
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
@@ -30,7 +30,7 @@ export default function Home() {
           <li className="mb-2 tracking-[-.01em]">
             Integracja z{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              Supabase & Redis
+              Supabase PostgreSQL
             </code>
             .
           </li>

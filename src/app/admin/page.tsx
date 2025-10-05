@@ -87,7 +87,7 @@ export default async function AdminPage() {
                   <div className="ml-5 w-0 flex-1">
                     <dl>
                       <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 truncate">
-                        Redis Status
+                        Database Status
                       </dt>
                       <dd className="text-lg font-medium text-gray-900 dark:text-white">
                         Połączony

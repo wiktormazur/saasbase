@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
-import { createTenant, getAllTenants } from '@/lib/redis'
+import { createTenant, getAllTenants } from '@/lib/tenants'
 
 export async function GET() {
   try {

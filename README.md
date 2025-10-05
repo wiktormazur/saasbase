@@ -7,8 +7,7 @@ Nowoczesna aplikacja SaaS zbudowana z Next.js i Supabase.
 - ✅ **Next.js 15** - Najnowsza wersja z App Router
 - ✅ **TypeScript** - Pełne wsparcie dla TypeScript
 - ✅ **Tailwind CSS** - Nowoczesne style
-- ✅ **Supabase** - Backend as a Service
-- ✅ **Redis (Upstash)** - Multi-tenant data storage
+- ✅ **Supabase** - Backend as a Service z PostgreSQL
 - ✅ **Multi-tenant Architecture** - Subdomain-based tenants
 - ✅ **Autentykacja** - Magic link authentication
 - ✅ **Middleware** - Ochrona tras i routing subdomen
@@ -29,14 +28,12 @@ Nowoczesna aplikacja SaaS zbudowana z Next.js i Supabase.
    npm install
    ```
 
-3. **Skonfiguruj Supabase i Redis**
+3. **Skonfiguruj Supabase**
    - Skopiuj `env.example` do `.env.local`
-   - Dodaj swoje klucze Supabase i Redis:
+   - Dodaj swoje klucze Supabase:
      ```env
      NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
      NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-     KV_REST_API_URL=your_upstash_redis_url
-     KV_REST_API_TOKEN=your_upstash_redis_token
      ```
 
 4. **Uruchom aplikację**
@@ -74,7 +71,7 @@ src/
 │   ├── login/
 │   └── page.tsx
 ├── lib/
-│   ├── redis.ts
+│   ├── tenants.ts
 │   ├── tenant.ts
 │   └── supabase/
 │       ├── client.ts
@@ -91,11 +88,10 @@ src/
 3. Włącz Email Authentication w Authentication > Settings
 4. Dodaj `http://localhost:3000/auth/callback` do Redirect URLs
 
-### Redis (Upstash)
-1. Utwórz konto w [Upstash](https://upstash.com)
-2. Utwórz nową bazę danych Redis
-3. Skopiuj URL i token z dashboard
-4. Dodaj do zmiennych środowiskowych
+### Database Setup
+1. W Supabase Dashboard przejdź do SQL Editor
+2. Uruchom migrację z pliku `supabase/migrations/001_create_tenants_table.sql`
+3. To utworzy tabelę `tenants` z odpowiednimi uprawnieniami
 
 ### Multi-tenant Development
 Dla lokalnego rozwoju z subdomenami:

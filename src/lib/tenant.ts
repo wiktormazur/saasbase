@@ -1,6 +1,5 @@
 import { headers } from 'next/headers'
-import { getTenant } from './redis'
-import { Tenant } from './redis'
+import { getTenant, Tenant } from './tenants'
 
 export async function getCurrentTenant(): Promise<Tenant | null> {
   const headersList = await headers()

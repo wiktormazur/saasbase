@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Tenant } from '@/lib/redis'
+import { Tenant } from '@/lib/tenants'
 
 interface TenantListProps {
   tenants: Tenant[]

@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
-import { getAllTenants } from '@/lib/redis'
+import { getAllTenants } from '@/lib/tenants'
 import { redirect } from 'next/navigation'
 import TenantList from './tenant-list'
 
